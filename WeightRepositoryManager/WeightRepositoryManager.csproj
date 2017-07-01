@@ -44,10 +44,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lab3_Sharp\MySerialization1\XmlSerializator.csproj">
-      <Project>{0e422985-2f0a-4eb3-a0ae-059a877375c6}</Project>
-      <Name>XmlSerializator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\StaticResourse\StaticResourse.csproj">
       <Project>{1c91244f-9c96-4827-a53c-4074c2efaa72}</Project>
       <Name>StaticResourse</Name>

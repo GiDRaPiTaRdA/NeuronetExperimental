@@ -13,3 +13,14 @@ C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightRepository
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightRepositoryManager\obj\Debug\WeightRepositoryManager.pdb
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightRepositoryManager\bin\Debug\TraversalLib.dll
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightRepositoryManager\bin\Debug\TraversalLib.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\obj\Debug\WeightRepositoryManager.csprojResolveAssemblyReference.cache
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\obj\Debug\WeightRepositoryManager.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\obj\Debug\WeightRepositoryManager.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\WeightRepositoryManager.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\WeightRepositoryManager.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\StaticResourse.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\WeightManagment.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\TraversalLib.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\StaticResourse.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\WeightManagment.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightRepositoryManager\bin\Debug\TraversalLib.pdb

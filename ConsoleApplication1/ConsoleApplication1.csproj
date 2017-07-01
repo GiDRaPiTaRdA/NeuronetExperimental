@@ -52,10 +52,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lab3_Sharp\MySerialization1\XmlSerializator.csproj">
-      <Project>{0e422985-2f0a-4eb3-a0ae-059a877375c6}</Project>
-      <Name>XmlSerializator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ImageProcessor\ImageManager.csproj">
       <Project>{ebe6f6c3-6945-41d8-aa37-fa635488e670}</Project>
       <Name>ImageManager</Name>

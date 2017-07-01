@@ -35,7 +35,7 @@ namespace ConsoleApplication1
 
         private static void traversal()
         {
-            int i = 0;
+           
             var array = new int[3, 3, 3]
             {
                 {
@@ -55,9 +55,17 @@ namespace ConsoleApplication1
                 }
             };
 
-            TRX<int> traversal = new TRX<int>(array, (args) => i++);
-            traversal.Recursive();
 
+            int i = 0;
+
+            (array as Array).Traversal((element, coords) => i += (int)element);
+
+            var enumerator = (array as Array).GetEnumerator();
+            int x = 0;
+            while (enumerator.MoveNext())
+            {
+                x += (int)enumerator.Current;
+            }
 
         }
     }

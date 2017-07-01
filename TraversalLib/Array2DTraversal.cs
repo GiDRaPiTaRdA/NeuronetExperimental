@@ -36,7 +36,7 @@ namespace TraversalLib
     public class TRX<T>
     {
 
-        public static void TraversalX<T>(T[,] binaryArray, Action<T, int, int> action)
+        public static void TraversalX(T[,,] binaryArray, Action<T, int, int, int> action)
         {
             int rank = binaryArray.Rank;
 
@@ -45,9 +45,9 @@ namespace TraversalLib
             {
                 for (int y = 0; y < binaryArray.GetLength(1); y++)
                 {
-                    for (int z = 0; y < binaryArray.GetLength(1); y++)
+                    for (int z = 0; z < binaryArray.GetLength(2); z++)
                     {
-                        action.Invoke(binaryArray[x, y], x, y);
+                        action.Invoke(binaryArray[x, y, z], x, y, z);
                     }
                 }
             }
@@ -69,7 +69,6 @@ namespace TraversalLib
         private int penatration = 0;
         Action<int[]> act;
         public Int32[] coords;
-        private int index = 0;
 
         public TRX(T[,,] binaryArray, Action<int[]> act)
         {
@@ -77,32 +76,192 @@ namespace TraversalLib
             this.rank = binaryArray.Rank;
             this.act = act;
             this.coords = new Int32[rank];
-
         }
 
-        public void Recursive()
+
+        public void RecursiveTraversal()
+        {
+            Recursive();
+        }
+        private void Recursive()
         {
             penatration++;
 
             for (int i = 0; i < binaryArray.GetLength(penatration - 1); i++)
             {
-                if (rank > penatration)
+                coords[penatration - 1] = i;
+
+                if (penatration < rank)
                 {
                     Recursive();
-
-                   if(penatration == rank)
-                        act(coords);
                 }
                 else
                 {
-                    if (penatration == rank)
-                        act(coords);
+                    act(coords);
                 }
             }
 
             penatration--;
-            rank--;
+
         }
+
+        //private void Recursive()
+        //{
+        //    penatration++;
+        //    TracePenatrations();
+
+        //    for (int i = 0; i < binaryArray.GetLength(penatration - 1); i++)
+        //    {
+
+        //        if (penatration < rank)
+        //            Recursive();
+        //        else
+        //        {
+        //            act(coords);
+        //            TraceI(i);
+        //        }
+        //    }
+
+        //    penatration--;
+
+        //}
+
+
+    }
+
+
+    public class TRXB<T>
+    {
+        private Array binaryArray;
+        private int rank;
+        private int penatration = 0;
+        Action<object, int[]> act;
+        public Int32[] coords;
+
+        public TRXB(Array binaryArray, Action<object, int[]> act)
+        {
+            this.binaryArray = binaryArray;
+            this.rank = binaryArray.Rank;
+            this.act = act;
+            this.coords = new Int32[rank];
+        }
+
+
+        public void RecursiveTraversal()
+        {
+            Recursive();
+        }
+        private void Recursive()
+        {
+            penatration++;
+
+            for (int i = 0; i < binaryArray.GetLength(penatration - 1); i++)
+            {
+                coords[penatration - 1] = i;
+
+                if (penatration < rank)
+                {
+                    Recursive();
+                }
+                else
+                {
+                    act(binaryArray.GetValue(coords), coords);
+                }
+            }
+
+            penatration--;
+
+        }
+
+        //private void Recursive()
+        //{
+        //    penatration++;
+        //    TracePenatrations();
+
+        //    for (int i = 0; i < binaryArray.GetLength(penatration - 1); i++)
+        //    {
+
+        //        if (penatration < rank)
+        //            Recursive();
+        //        else
+        //        {
+        //            act(coords);
+        //            TraceI(i);
+        //        }
+        //    }
+
+        //    penatration--;
+
+        //}
+
+
+    }
+
+
+    public static class TRXС
+    {
+        public static void Traversal(this Array binaryArray, Action<object, int[]> act)
+        {
+            int rank = binaryArray.Rank;
+            int penatration = 0;
+            int[] coords = new int[rank];
+
+            Recursive(penatration, binaryArray, act, coords, rank);
+        }
+
+
+        public static void RecursiveTraversal(Array binaryArray, Action<object, int[]> act)
+        {
+            int rank = binaryArray.Rank;
+            int penatration = 0;
+            int[] coords = new int[rank];
+
+            Recursive(penatration,binaryArray,act,coords,rank);
+        }
+        private static void Recursive(int penatration, Array binaryArray, Action<object, int[]> act,int[] coords,int rank)
+        {
+            penatration++;
+
+            for (int i = 0; i < binaryArray.GetLength(penatration - 1); i++)
+            {
+                coords[penatration - 1] = i;
+
+                if (penatration < rank)
+                {
+                    Recursive(penatration, binaryArray, act, coords, rank);
+                }
+                else
+                {
+                    act(binaryArray.GetValue(coords), coords);
+                }
+            }
+
+            penatration--;
+
+        }
+
+        //private void Recursive()
+        //{
+        //    penatration++;
+        //    TracePenatrations();
+
+        //    for (int i = 0; i < binaryArray.GetLength(penatration - 1); i++)
+        //    {
+
+        //        if (penatration < rank)
+        //            Recursive();
+        //        else
+        //        {
+        //            act(coords);
+        //            TraceI(i);
+        //        }
+        //    }
+
+        //    penatration--;
+
+        //}
+
+
     }
 }
 

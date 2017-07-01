@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSerializator", "..\Lab3_Sharp\MySerialization1\XmlSerializator.csproj", "{0E422985-2F0A-4EB3-A0AE-059A877375C6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManager", "ImageProcessor\ImageManager.csproj", "{EBE6F6C3-6945-41D8-AA37-FA635488E670}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticResourse", "StaticResourse\StaticResourse.csproj", "{1C91244F-9C96-4827-A53C-4074C2EFAA72}"
@@ -39,10 +37,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0E422985-2F0A-4EB3-A0AE-059A877375C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E422985-2F0A-4EB3-A0AE-059A877375C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E422985-2F0A-4EB3-A0AE-059A877375C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E422985-2F0A-4EB3-A0AE-059A877375C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EBE6F6C3-6945-41D8-AA37-FA635488E670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBE6F6C3-6945-41D8-AA37-FA635488E670}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBE6F6C3-6945-41D8-AA37-FA635488E670}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -84,7 +78,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0E422985-2F0A-4EB3-A0AE-059A877375C6} = {F36285E9-1258-48C5-BE7E-BB822A8E3FDB}
 		{EBE6F6C3-6945-41D8-AA37-FA635488E670} = {C6B67202-B4C1-4D8F-8C55-A961C0C6A1D0}
 		{1C91244F-9C96-4827-A53C-4074C2EFAA72} = {E44936D2-0059-4282-84E1-E28C479B977F}
 		{6E339C13-55D9-466D-AC1A-F40C3FB24204} = {0A5EE1AB-A78C-449E-BBA4-02E36EEFA5D1}
