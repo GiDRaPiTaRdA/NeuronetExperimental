@@ -1,0 +1,5 @@
+C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\TraversalLib\bin\Debug\TraversalLib.dll
+C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\TraversalLib\bin\Debug\TraversalLib.pdb
+C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\TraversalLib\obj\Debug\TraversalLib.csprojResolveAssemblyReference.cache
+C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\TraversalLib\obj\Debug\TraversalLib.dll
+C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\TraversalLib\obj\Debug\TraversalLib.pdb

@@ -1,0 +1,9 @@
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ImageProcessor\bin\Debug\ImageProcessor.dll
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ImageProcessor\bin\Debug\ImageProcessor.pdb
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ImageProcessor\bin\Debug\StaticResourse.dll
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ImageProcessor\bin\Debug\StaticResourse.pdb
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ImageProcessor\obj\Debug\ImageManager.csprojResolveAssemblyReference.cache
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ImageProcessor\obj\Debug\ImageProcessor.dll
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ImageProcessor\obj\Debug\ImageProcessor.pdb
+C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ImageProcessor\bin\Debug\TraversalLib.dll
+C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ImageProcessor\bin\Debug\TraversalLib.pdb

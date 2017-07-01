@@ -1,0 +1,5 @@
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ConsoleOutput\bin\Debug\ConsoleOutput.exe.config
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ConsoleOutput\bin\Debug\ConsoleOutput.exe
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ConsoleOutput\bin\Debug\ConsoleOutput.pdb
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ConsoleOutput\obj\Debug\ConsoleOutput.exe
+C:\Users\Maksim\documents\visual studio 2015\Projects\NeuroNet2\ConsoleOutput\obj\Debug\ConsoleOutput.pdb
