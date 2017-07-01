@@ -24,3 +24,6 @@ C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ConsoleApplicati
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ConsoleApplication1\bin\Debug\SerializerBase.pdb
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
