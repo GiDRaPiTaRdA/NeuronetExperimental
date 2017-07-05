@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,9 @@ namespace StaticResourse
 {
     public class StaticResourses
     {
-        public static string innitialDirectoryForOpenFileDialog = @"C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\YDATA\images";
-        public static byte imageFilterCoeficient = 120;
-        public static string defaultDirectoryForWeightRepository = @"C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\YDATA\weights";
+
+        public static string SolutionDirectroy => Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())));
+        public static string InnitialDirectoryForOpenFileDialog => SolutionDirectroy+@"\YDATA\images";
+        public static string DefaultDirectoryForWeightRepository => SolutionDirectroy + @"\YDATA\weights";
     }
 }

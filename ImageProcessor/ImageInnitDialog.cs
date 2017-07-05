@@ -11,7 +11,7 @@ namespace ImageManager
         {
             OpenFileDialog ofDialog = new OpenFileDialog();
             ofDialog.Title = "Select image";
-            ofDialog.InitialDirectory = StaticResourses.innitialDirectoryForOpenFileDialog;
+            ofDialog.InitialDirectory = StaticResourses.InnitialDirectoryForOpenFileDialog;
             ofDialog.Multiselect = false;
             ofDialog.ShowDialog();
 

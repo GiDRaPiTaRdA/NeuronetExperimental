@@ -3,34 +3,49 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using TraversalLib;
+using VisualData;
 
 namespace ConsoleApplication1
 {
     class Program
     {
-        private static string Path => StaticResourse.StaticResourses.defaultDirectoryForWeightRepository + "\\testing1.jpg";
+        private static string RootPath => StaticResourse.StaticResourses.DefaultDirectoryForWeightRepository + "\\testing1.jpg";
 
+        [STAThread]
         static void Main(string[] args)
         {
-            traversal();
+            ImageSimplify();
         }
 
-        private static void colorAnalizeRGB()
+        private static void ColorAnalizeRGB()
         {
             Color[,] arr;
             using (Image img = ImageInnitDialog.InnitImage())
             {
-                arr = ImageProcessor.AnalizeRGB(img, 2);
+                arr = ColorAnalizer.AnalizeRGB(img, 2);
             }
 
-            VisualData.VisualDataStorage.Save(arr, Path);
+            VisualDataStorage.Save(arr, RootPath);
 
-            Process.Start(Path);
+            Process.Start(RootPath);
+        }
+
+        private static void ImageSimplify()
+        {
+            Bitmap bitmap;
+            using (Image img = ImageInnitDialog.InnitImage())
+            {
+                bitmap  = PixelSimlifier.Simlify(img as Bitmap, 5);
+            }
+            VisualDataStorage.Save(bitmap,RootPath);
+
+            Process.Start(RootPath);
         }
 
         private static void traversal()

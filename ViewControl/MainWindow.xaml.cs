@@ -31,20 +31,10 @@ namespace ViewControl
             InitializeComponent();
         }
 
-        private static string Path => StaticResourse.StaticResourses.defaultDirectoryForWeightRepository + "\\testing1.jpg";
+     
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Color[,] arr;
-            using (Image img = ImageInnitDialog.InnitImage())
-            {
-                arr = ImageProcessor.AnalizeRGB(img,2);
-            }
-
-            VisualData.VisualDataStorage.Save(arr,Path);
-
-            Close();
-            Process.Start(Path);
             
         }
 

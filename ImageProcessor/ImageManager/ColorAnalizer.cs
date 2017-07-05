@@ -5,7 +5,7 @@ using TraversalLib;
 
 namespace ImageManager
 {
-    public static class ImageProcessor
+    public static class ColorAnalizer
     {
         /// <summary>
         /// USES FILTER TO DIVIDE IMG INTO BLACK AND WHITE 
@@ -96,6 +96,8 @@ namespace ImageManager
             return colorArray;
         }
 
+
+        #region Help
         public static byte GetShade(byte brightness,byte shadesNumber)
         {
             if (shadesNumber < 2)
@@ -124,7 +126,6 @@ namespace ImageManager
 
             return brightness;
         }
-
         public static string ToString(byte[,] bitmas)
         {
             string result = "";
@@ -138,23 +139,6 @@ namespace ImageManager
             result += '\n';
             return result;
         }
-        public static string ToPatern(byte[,] bitmas)
-        {
-            string result = "";
-            for (int y = 0; y < bitmas.GetLength(1); y++)
-            {
-                if (result != "")
-                    result += '\n';
-                for (int x = 0; x < bitmas.GetLength(0); x++)
-                {
-                    if (bitmas[x, y] > 0)
-                        result += "[☻]";
-                    else
-                        result += "[☺]";
-                }
-            }
-            result += '\n';
-            return result;
-        }
+        #endregion
     }
 }

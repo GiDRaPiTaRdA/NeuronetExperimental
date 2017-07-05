@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageInnitDialog.cs" />
-    <Compile Include="ImageProcessor.cs" />
+    <Compile Include="ImageManager\ColorAnalizer.cs" />
+    <Compile Include="ImageManager\PixelSimlifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
