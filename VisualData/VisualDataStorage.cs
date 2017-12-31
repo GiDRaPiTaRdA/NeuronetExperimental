@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +12,7 @@ namespace VisualData
         {
             Bitmap bitmap = new Bitmap(bytes.GetLength(0), bytes.GetLength(1));
 
-            TraversalLib.Array2DTraversal.Traversal(bytes, (b, x, y) => bitmap.SetPixel(x, y, Color.FromArgb(255,b,b,b)));
+            TraversalLib.BinaryArrayTraversal.Traversal(bytes, (b, x, y) => bitmap.SetPixel(x, y, Color.FromArgb(255,b,b,b)));
 
             bitmap.Save(filename);
         }
@@ -22,7 +21,7 @@ namespace VisualData
         {
             Bitmap bitmap = new Bitmap(colors.GetLength(0), colors.GetLength(1));
 
-            TraversalLib.Array2DTraversal.Traversal(colors, (color, x, y) => bitmap.SetPixel(x, y, Color.FromArgb(255, color.R, color.G, color.B)));
+            TraversalLib.BinaryArrayTraversal.Traversal(colors, (color, x, y) => bitmap.SetPixel(x, y, Color.FromArgb(255, color.R, color.G, color.B)));
 
             bitmap.Save(filename);
         }

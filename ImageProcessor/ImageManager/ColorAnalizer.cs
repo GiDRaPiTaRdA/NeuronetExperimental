@@ -18,7 +18,7 @@ namespace ImageManager
             Bitmap bitmap = image as Bitmap;
             byte[,] byteArray = new byte[bitmap.Width, bitmap.Height];
 
-            Array2DTraversal.Traversal(byteArray, (@byte, x, y) =>
+            BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
                 {
                     //0 white 1 black
                     byteArray[x,y] = Convert.ToByte(GetBrightness(bitmap.GetPixel(x,y)) >= filter ? byte.MaxValue : byte.MinValue);
@@ -46,7 +46,7 @@ namespace ImageManager
             // direct conversion
             if (shadesNumber == byte.MaxValue)
             {
-                Array2DTraversal.Traversal(byteArray, (@byte, x, y) =>
+                BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
                 {
                     byte shade = GetBrightness(bitmap.GetPixel(x, y));
                     byteArray[x, y] = shade;
@@ -59,7 +59,7 @@ namespace ImageManager
             {
                 float range = byte.MaxValue / (shadesNumber - 1);
 
-                Array2DTraversal.Traversal(byteArray, (@byte, x, y) =>
+                BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
                 {
                     byte shade = GetShade(GetBrightness(bitmap.GetPixel(x, y)), shadesNumber);
 
@@ -84,7 +84,7 @@ namespace ImageManager
             // shades analizing conversion
             float range = byte.MaxValue / (shadesNumber - 1);
 
-            Array2DTraversal.Traversal(colorArray, (@byte, x, y) =>
+            BinaryArrayTraversal.Traversal(colorArray, (@byte, x, y) =>
             {
                 byte shadeR = GetShade(bitmap.GetPixel(x, y).R, shadesNumber);
                 byte shadeG = GetShade(bitmap.GetPixel(x, y).G, shadesNumber);

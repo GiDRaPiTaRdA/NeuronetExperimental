@@ -8,3 +8,8 @@ C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\TraversalLib\bin\D
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\TraversalLib\obj\Debug\TraversalLib.csprojResolveAssemblyReference.cache
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\TraversalLib\obj\Debug\TraversalLib.dll
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\TraversalLib\obj\Debug\TraversalLib.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\TraversalLib\bin\Debug\TraversalLib.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\TraversalLib\bin\Debug\TraversalLib.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\TraversalLib\obj\Debug\TraversalLib.csprojResolveAssemblyReference.cache
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\TraversalLib\obj\Debug\TraversalLib.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\TraversalLib\obj\Debug\TraversalLib.pdb

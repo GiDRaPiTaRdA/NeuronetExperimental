@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
-using TraversalLib;
+using ImageProcessor;
 using VisualData;
 
 namespace ConsoleApplication1
@@ -48,40 +46,40 @@ namespace ConsoleApplication1
             Process.Start(RootPath);
         }
 
-        private static void traversal()
-        {
+        //private static void traversal()
+        //{
            
-            var array = new int[3, 3, 3]
-            {
-                {
-                    { 1, 2,3},
-                    { 4, 5 ,6},
-                    {7,8,9 }
-                },
-                                 {
-                    { 10, 11,12},
-                    { 13, 14,15},
-                    {16,17,18 }
-                },
-                                 {
-                    { 19, 20,21},
-                    { 22, 23,24},
-                    {25,26,27 }
-                }
-            };
+        //    var array = new int[3, 3, 3]
+        //    {
+        //        {
+        //            { 1, 2,3},
+        //            { 4, 5 ,6},
+        //            {7,8,9 }
+        //        },
+        //                         {
+        //            { 10, 11,12},
+        //            { 13, 14,15},
+        //            {16,17,18 }
+        //        },
+        //                         {
+        //            { 19, 20,21},
+        //            { 22, 23,24},
+        //            {25,26,27 }
+        //        }
+        //    };
 
 
-            int i = 0;
+        //    int i = 0;
 
-            (array as Array).Traversal((element, coords) => i += (int)element);
+        //    array.Traversal((element, coords) => i += (int)element));
+        
+        //    var enumerator = (array as Array).GetEnumerator();
+        //    int x = 0;
+        //    while (enumerator.MoveNext())
+        //    {
+        //        x += (int)enumerator.Current;
+        //    }
 
-            var enumerator = (array as Array).GetEnumerator();
-            int x = 0;
-            while (enumerator.MoveNext())
-            {
-                x += (int)enumerator.Current;
-            }
-
-        }
+        //}
     }
 }

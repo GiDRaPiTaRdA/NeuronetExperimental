@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TraversalLib;
@@ -34,7 +33,7 @@ namespace WeightManagment.WeightManage
             if (!EqualsSize(weight1, weight2))
                 throw new IncompatibleWeightsSizesException();
 
-            Array2DTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToByte(b1 + b2));
+            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToByte(b1 + b2));
             return weight1;
         }
         public static Weight SubstituteWeight(Weight weight1, Weight weight2)
@@ -42,7 +41,7 @@ namespace WeightManagment.WeightManage
             if (!EqualsSize(weight1, weight2))
                 throw new IncompatibleWeightsSizesException();
 
-            Array2DTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToByte(b1 - b2));
+            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToByte(b1 - b2));
             return weight1;
         }
         public static Weight Multiply(Weight weight1, Weight weight2)
@@ -50,7 +49,7 @@ namespace WeightManagment.WeightManage
             if (!EqualsSize(weight1, weight2))
                 throw new IncompatibleWeightsSizesException();
 
-            Array2DTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToByte(b1 * b2));
+            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToByte(b1 * b2));
             return weight1;
         }
 

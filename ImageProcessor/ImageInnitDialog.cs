@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using StaticResourse;
 
-namespace ImageManager
+namespace ImageProcessor
 {
     public static class ImageInnitDialog
     {
