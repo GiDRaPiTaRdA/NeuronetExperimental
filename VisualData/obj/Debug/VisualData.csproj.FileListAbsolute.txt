@@ -8,6 +8,5 @@ C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\VisualData\bin\D
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\VisualData\bin\Debug\VisualData.dll
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\VisualData\bin\Debug\VisualData.pdb
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\VisualData\bin\Debug\TraversalLib.dll
-C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\VisualData\obj\Debug\VisualData.csprojResolveAssemblyReference.cache
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\VisualData\obj\Debug\VisualData.dll
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\VisualData\obj\Debug\VisualData.pdb
