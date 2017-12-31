@@ -7,3 +7,11 @@ C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\NeuronManagment\
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\NeuronManagment\obj\Debug\NeuronManagment.pdb
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\NeuronManagment\bin\Debug\TraversalLib.dll
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\NeuronManagment\bin\Debug\TraversalLib.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\bin\Debug\NeuronManagment.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\bin\Debug\NeuronManagment.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\bin\Debug\WeightManagment.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\bin\Debug\TraversalLib.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\bin\Debug\WeightManagment.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\obj\Debug\NeuronManagment.csprojResolveAssemblyReference.cache
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\obj\Debug\NeuronManagment.dll
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\NeuronManagment\obj\Debug\NeuronManagment.pdb

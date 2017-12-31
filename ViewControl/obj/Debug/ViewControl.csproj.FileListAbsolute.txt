@@ -22,3 +22,17 @@ C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ViewControl\bin\
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ViewControl\bin\Debug\TraversalLib.dll
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ViewControl\bin\Debug\WeightManagment.pdb
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\ViewControl\bin\Debug\TraversalLib.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\bin\Debug\ViewControl.exe.config
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\bin\Debug\ViewControl.exe
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\bin\Debug\ViewControl.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl.csprojResolveAssemblyReference.cache
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\MainWindow.g.cs
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\App.g.cs
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl_MarkupCompile.cache
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl_MarkupCompile.lref
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\MainWindow.baml
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl.g.resources
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl.Properties.Resources.resources
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl.csproj.GenerateResource.Cache
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl.exe
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\ViewControl\obj\Debug\ViewControl.pdb
