@@ -40,7 +40,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="TraversalLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\TraversalLib\bin\Debug\TraversalLib.dll</HintPath>
+      <HintPath>..\LibraryPack\TraversalLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
