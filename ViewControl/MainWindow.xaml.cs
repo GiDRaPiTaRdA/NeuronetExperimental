@@ -23,7 +23,7 @@ namespace ViewControl
     {
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
      

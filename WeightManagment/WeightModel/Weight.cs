@@ -1,32 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using TraversalLib;
 using WeightManagment.WeightManage;
 
 namespace WeightManagment.WeightModel
 {
+    [Serializable]
     public class Weight
     {
-        public byte[,] WeightArray { get; set; }
+        public int[,] WeightArray { get; set; }
 
-        public int sizeX => WeightArray.GetLength(0);
-        public int sizeY => WeightArray.GetLength(1);
+        public int sizeX => this.WeightArray.GetLength(0);
+        public int sizeY => this.WeightArray.GetLength(1);
 
-        public Weight(byte[,] weightArray,byte infill = 0)
+        private Weight() { }
+
+        public Weight(byte[,] weightArrayBytes, int? infill = null) : this(ConvertToInt(weightArrayBytes), infill) { }
+
+        public Weight(sbyte[,] weightArrayBytes, int? infill = null) : this(ConvertToInt(weightArrayBytes), infill) { }
+       
+        public Weight(int[,] weightArray, int? infill = null)
         {
             this.WeightArray = weightArray;
-            WeightManager.InnitWeightBy(this, infill);
+
+            if(infill!=null)
+                WeightManager.InnitWeightBy(this, infill.Value);
         }
 
         public int GetSum()
         {
             int sum = 0;
-            for (int x = 0; x < sizeX; x++)
+            for (int x = 0; x < this.sizeX; x++)
             {
-                for (int y = 0; y < sizeY; y++)
+                for (int y = 0; y < this.sizeY; y++)
                 {
-                    sum += WeightArray[x, y];
+                    sum += this.WeightArray[x, y];
                 }
             }
             return sum;
@@ -35,12 +46,12 @@ namespace WeightManagment.WeightModel
         public override string ToString()
         {
             string s = "Weights:";
-            for (int y = 0; y < sizeY; y++)
+            for (int y = 0; y < this.sizeY; y++)
             {
                 s += "\n";
-                for (int x = 0; x < sizeX; x++)
+                for (int x = 0; x < this.sizeX; x++)
                 {
-                    s += WeightArray[x, y];
+                    s += this.WeightArray[x, y];
                 }
             }
             return s;
@@ -58,6 +69,15 @@ namespace WeightManagment.WeightModel
         public static Weight operator *(Weight weight1, Weight weight2)
         {
             return WeightManager.Multiply(weight1, weight2);
+        }
+
+        private static int[,] ConvertToInt(Array array)
+        {
+            int[,] weightArray = new int[array.GetLength(0), array.GetLength(1)];
+
+            array.Traversal((o, ps) => { weightArray[ps[0], ps[1]] = Convert.ToInt32(o); });
+
+            return weightArray;
         }
         #endregion
     }

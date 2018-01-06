@@ -26,7 +26,7 @@ namespace NeuronManagment
 
         public bool Recognize(Weight inputWeight)
         {
-            return ObtainAnswer((this.Weight*inputWeight).GetSum());
+            return this.ObtainAnswer((this.Weight*inputWeight).GetSum());
         }
     }
 }

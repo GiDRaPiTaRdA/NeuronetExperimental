@@ -9,10 +9,13 @@ namespace ImageProcessor
     {
         private static string OpenFileDialogInnitImage()
         {
-            OpenFileDialog ofDialog = new OpenFileDialog();
-            ofDialog.Title = "Select image";
-            ofDialog.InitialDirectory = StaticResourses.InnitialDirectoryForOpenFileDialog;
-            ofDialog.Multiselect = false;
+            OpenFileDialog ofDialog = new OpenFileDialog
+            {
+                Title = "Select image",
+                InitialDirectory = StaticResourses.InnitialDirectoryForOpenFileDialog,
+                Multiselect = false
+            };
+
             ofDialog.ShowDialog();
 
             return ofDialog.FileName;

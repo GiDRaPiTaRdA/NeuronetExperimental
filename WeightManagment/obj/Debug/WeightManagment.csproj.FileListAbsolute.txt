@@ -10,3 +10,4 @@ C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\bi
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\bin\Debug\TraversalLib.dll
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\obj\Debug\WeightManagment.dll
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\obj\Debug\WeightManagment.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\obj\Debug\WeightManagment.csprojResolveAssemblyReference.cache

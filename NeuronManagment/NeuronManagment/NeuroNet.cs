@@ -13,13 +13,13 @@ namespace NeuronManagment
 
         public NeuroNet()
         {
-            Inntialize();
+            this.Inntialize();
         }
 
         public NeuroNet(List<Neuron> neuronsList)
         {
-            Inntialize();
-            NeuroNetwork = neuronsList;
+            this.Inntialize();
+            this.NeuroNetwork = neuronsList;
         }
 
 

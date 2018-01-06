@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VisualData
 {
-    public class VisualDataStorage
+    public static class VisualDataStorage
     {
         public static void Save(byte[,] bytes, string filename)
         {

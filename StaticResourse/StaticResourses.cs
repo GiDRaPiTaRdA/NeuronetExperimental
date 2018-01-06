@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace StaticResourse
 {
-    public class StaticResourses
+    public static class StaticResourses
     {
 
         public static string SolutionDirectroy => Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())));
         public static string InnitialDirectoryForOpenFileDialog => SolutionDirectroy+@"\YDATA\images";
         public static string DefaultDirectoryForWeightRepository => SolutionDirectroy + @"\YDATA\weights";
+        public static string WeightExtention => ".wght";
     }
 }

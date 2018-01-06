@@ -7,20 +7,20 @@ namespace WeightManagment.WeightManage
 {
     public class IncompatibleWeightsSizesException:Exception
     {
-        private string defaultMessage = "The weights with such sizes are incompatible";
+        private readonly string defaultMessage = "The weights with such sizes are incompatible";
 
-        private string additionalMessage = "";
+        private readonly string additionalMessage;
 
 
         public IncompatibleWeightsSizesException()
         {
-            additionalMessage = "";
+            this.additionalMessage = string.Empty;
         }
         public IncompatibleWeightsSizesException(string message)
         {
-            additionalMessage = message;
+            this.additionalMessage = message;
         }
 
-        public override string Message => defaultMessage +"\t"+ additionalMessage;
+        public override string Message => this.defaultMessage +"\t"+ this.additionalMessage;
     }
 }

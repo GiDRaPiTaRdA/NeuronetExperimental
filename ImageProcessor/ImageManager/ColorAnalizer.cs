@@ -3,102 +3,68 @@ using System.Drawing;
 using StaticResourse;
 using TraversalLib;
 
-namespace ImageManager
+namespace ImageProcessor
 {
     public static class ColorAnalizer
     {
-        /// <summary>
-        /// USES FILTER TO DIVIDE IMG INTO BLACK AND WHITE 
-        /// </summary>
-        /// <param name="image">image</param>
-        /// <param name="filter">less - white; more - black</param>
-        /// <returns></returns>
-        public static byte[,] AnalizeBoolean(Image image, byte filter = byte.MaxValue/2)
+        public static byte[,] AnalizeByte(Bitmap bitmap, byte filter = byte.MaxValue/2)
         {
-            Bitmap bitmap = image as Bitmap;
             byte[,] byteArray = new byte[bitmap.Width, bitmap.Height];
 
             BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
                 {
-                    //0 white 1 black
                     byteArray[x,y] = Convert.ToByte(GetBrightness(bitmap.GetPixel(x,y)) >= filter ? byte.MaxValue : byte.MinValue);
                 });
 
             return byteArray;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="image">image</param>
-        /// <param name="shadesNumber">the number of shades to use to present image[2-255]</param>
-        /// <returns></returns>
-        public static byte[,] AnalizeBackWhite(Image image, byte shadesNumber = byte.MaxValue)
+        public static bool[,] AnalizeBoolean(Bitmap bitmap, byte filter = byte.MaxValue / 2)
         {
-            if (shadesNumber < 2)
-                throw new Exception(nameof(shadesNumber)+" must have value in range [2-255]");
+            bool[,] byteArray = new bool[bitmap.Width, bitmap.Height];
 
-
-            Bitmap bitmap = image as Bitmap;
-            byte[,] byteArray = new byte[bitmap.Width, bitmap.Height];
-
-
-            // direct conversion
-            if (shadesNumber == byte.MaxValue)
+            BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
             {
-                BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
-                {
-                    byte shade = GetBrightness(bitmap.GetPixel(x, y));
-                    byteArray[x, y] = shade;
-                });
+                //0 white 1 black
+                byteArray[x, y] = GetBrightness(bitmap.GetPixel(x, y)) >= filter;
+            });
 
-            }
-
-            // shades analizing conversion
-            else
-            {
-                float range = byte.MaxValue / (shadesNumber - 1);
-
-                BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
-                {
-                    byte shade = GetShade(GetBrightness(bitmap.GetPixel(x, y)), shadesNumber);
-
-                    byteArray[x, y] = shade;
-                });
-
-            }
             return byteArray;
         }
 
-        /// <summary>
-        /// USES DIVIDE IMG INTO colours
-        /// </summary>
-        /// <param name="image">image</param>
-        /// <param name="filter">less - white; more - black</param>
-        /// <returns></returns>
-        public static Color[,] AnalizeRGB(Image image, byte shadesNumber)
+        public static Bitmap AnalizeShades(Bitmap bitmap, byte shadesNumber = byte.MaxValue)
         {
-            Bitmap bitmap = image as Bitmap;
-            Color[,] colorArray = new Color[bitmap.Width, bitmap.Height];
+            if (shadesNumber < 2)
+                throw new Exception(nameof(shadesNumber) + " must have value in range [2-255]");
 
-            // shades analizing conversion
-            float range = byte.MaxValue / (shadesNumber - 1);
+            if (shadesNumber == byte.MaxValue)
+                return bitmap;
 
-            BinaryArrayTraversal.Traversal(colorArray, (@byte, x, y) =>
+            Bitmap result = ImageManager.PixelTraversal(bitmap, (color, x, y) =>
             {
-                byte shadeR = GetShade(bitmap.GetPixel(x, y).R, shadesNumber);
-                byte shadeG = GetShade(bitmap.GetPixel(x, y).G, shadesNumber);
-                byte shadeB = GetShade(bitmap.GetPixel(x, y).B, shadesNumber);
+                byte shadeR = GetShade(color.R, shadesNumber);
+                byte shadeG = GetShade(color.G, shadesNumber);
+                byte shadeB = GetShade(color.B, shadesNumber);
 
-                colorArray[x, y]= Color.FromArgb(shadeR,shadeG,shadeB);
+                return Color.FromArgb(shadeR, shadeG, shadeB);
             });
 
-            return colorArray;
+            return result;
         }
 
+        public static Bitmap AnalizeBackWhite(Bitmap bitmap,double factorR = 1, double factorG = 1, double factorB = 1)
+        {
+            Bitmap result = ImageManager.PixelTraversal(bitmap, (color, x, y) =>
+            {
+                byte briteness = GetBrightness(color, factorR, factorG, factorB);
+                return Color.FromArgb(briteness,briteness,briteness);
+            });
+
+            return result;
+        }
 
         #region Help
-        public static byte GetShade(byte brightness,byte shadesNumber)
+        private static byte GetShade(byte brightness,byte shadesNumber)
         {
             if (shadesNumber < 2)
                 throw new Exception(nameof(shadesNumber) + " must have value in range [2-255]");
@@ -116,7 +82,7 @@ namespace ImageManager
 
             return shade;
         }
-        public static byte GetBrightness(Color color)
+        private static byte GetBrightness(Color color, double factorR = 1, double factorG = 1, double factorB = 1)
         {
             byte r = color.R;
             byte g = color.G;
@@ -126,6 +92,7 @@ namespace ImageManager
 
             return brightness;
         }
+
         public static string ToString(byte[,] bitmas)
         {
             string result = "";

@@ -7,3 +7,4 @@ C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\StaticResourse\bin
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\StaticResourse\bin\Debug\StaticResourse.pdb
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\StaticResourse\obj\Debug\StaticResourse.dll
 C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\StaticResourse\obj\Debug\StaticResourse.pdb
+C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\StaticResourse\obj\Debug\StaticResourse.csprojResolveAssemblyReference.cache
