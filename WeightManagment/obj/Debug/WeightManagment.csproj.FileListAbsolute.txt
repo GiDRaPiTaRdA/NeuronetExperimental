@@ -5,9 +5,3 @@ C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightManagment\
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightManagment\obj\Debug\WeightManagment.pdb
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightManagment\bin\Debug\TraversalLib.dll
 C:\Users\Maksim\Documents\Visual Studio 2015\Projects\NeuroNet2\WeightManagment\bin\Debug\TraversalLib.pdb
-C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\bin\Debug\WeightManagment.dll
-C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\bin\Debug\WeightManagment.pdb
-C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\bin\Debug\TraversalLib.dll
-C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\obj\Debug\WeightManagment.dll
-C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\obj\Debug\WeightManagment.pdb
-C:\Users\Maxim\Documents\Visual Studio 2015\Projects\neuronet\WeightManagment\obj\Debug\WeightManagment.csprojResolveAssemblyReference.cache
