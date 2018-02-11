@@ -124,28 +124,6 @@ namespace NeuronManagment
                 }
             }
 
-
-
-            //// Layer A deltas
-            //for (int i = 0; i < this.NeuroLayers[2].Count; i++)
-            //{
-            //    Neuron neuron = this.NeuroLayers[2][i];
-
-            //    double error = targets[i] - neuron.LastSum;
-            //    neuron.Delta = NeuronManager.SigmoidDerivativeFunc(neuron.LastSum) * error;
-            //}
-
-            //// Layer B deltas
-            //for (int i = 0; i < this.NeuroLayers[1].Count; i++)
-            //{
-            //    double error = 0;
-            //    for (int j = 0; j < this.NeuroLayers[2].Count; j++)
-            //    {
-            //        error += this.NeuroLayers[2][j].Delta * this.GetSynapse(this.NeuroLayers[1][i], this.NeuroLayers[2][j]).Weight;
-            //    }
-            //    this.NeuroLayers[1][i].Delta = NeuronManager.SigmoidDerivativeFunc(this.NeuroLayers[1][i].LastSum) * error;
-            //}
-
             //FOR EACH LAYER UPDATE WEIGHTS
             for (int i = this.NeuroLayers.GetLength(0) - 1; i > 0; i--)
             {
