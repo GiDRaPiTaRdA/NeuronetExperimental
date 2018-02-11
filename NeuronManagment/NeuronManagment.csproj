@@ -34,13 +34,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NeuronManager.cs" />
-    <Compile Include="NeuronManagment\Bias.cs" />
-    <Compile Include="NeuronManagment\Neuro.cs" />
-    <Compile Include="NeuronManagment\Neuron.cs" />
+    <Compile Include="NeuronManagment\NeuronManager.cs" />
+    <Compile Include="NeuronManagment\Entities\Bias.cs" />
+    <Compile Include="NeuronManagment\Demo\Neuro.cs" />
+    <Compile Include="NeuronManagment\Entities\Neuron.cs" />
+    <Compile Include="NeuronManagment\Demo\NeuroDemo.cs" />
     <Compile Include="NeuronManagment\NeuroNet.cs" />
-    <Compile Include="NeuronManagment\Receptor.cs" />
-    <Compile Include="NeuronManagment\Synapse.cs" />
+    <Compile Include="NeuronManagment\Entities\Receptor.cs" />
+    <Compile Include="NeuronManagment\Entities\Synapse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

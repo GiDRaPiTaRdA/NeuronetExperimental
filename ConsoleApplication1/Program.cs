@@ -20,11 +20,9 @@ namespace ConsoleApplication1
         [STAThread]
         static void Main(string[] args)
         {
-            NeuroNet network = new NeuroNet(3, 10,5, 1);
+            var net = NeuronManagment.Demo.NeuroDemo.DemoStart();
 
-            network.ForwardPropagation(0, 1, 1);
-
-            network.demo();
+            Debug.WriteLine(net.ForwardPropagation(1,0,1)[0] > 0.5 ? true:false);
 
             //Neuro neuro = new Neuro();
             //neuro.demo();

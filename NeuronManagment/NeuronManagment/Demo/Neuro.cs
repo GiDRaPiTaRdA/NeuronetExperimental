@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace NeuronManagment
+namespace NeuronManagment.Demo
 {
+    // TEST NEURO TO TRAIN ON, to see the principle
+
     public class Neuro
     {
         int NeuronsCountC;

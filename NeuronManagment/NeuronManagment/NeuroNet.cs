@@ -12,9 +12,13 @@ namespace NeuronManagment
 {
     public class NeuroNet
     {
+        #region Properies
+
         List<Neuron>[] NeuroLayers { get; set; }
 
         public double LearningRate { get; set; }
+
+        #endregion
 
         public NeuroNet(params int[] stucture)
         {
@@ -66,7 +70,8 @@ namespace NeuronManagment
             }
         }
 
-        public double ForwardPropagation(params double[] inputs)
+
+        public double[] ForwardPropagation(params double[] inputs)
         {
             this.SetInputs(inputs);
 
@@ -80,14 +85,13 @@ namespace NeuronManagment
                 }
             }
 
-            double result = this.NeuroLayers[this.NeuroLayers.GetLength(0) - 1][0].LastSum;
+            double[] outputs = NeuroLayers[this.NeuroLayers.GetLength(0) - 1].Select((n) => n.LastSum).ToArray();
 
-            return result;
+            return outputs;
         }
 
         public double BackPropagation(double[] targets)
         {
-
             for(int l = this.NeuroLayers.Length-1;l>0; l--)
             {
                 // OUTPUT LAYER
@@ -149,6 +153,47 @@ namespace NeuronManagment
             return err;
         }
 
+        public double Train(Dictionary<double[], double[]> patterns)
+        {
+            double error = 0;
+
+            for (int j = 0; j < patterns.Count; j++)
+            {
+                this.ForwardPropagation(patterns.ElementAt(j).Key);
+
+                error += this.BackPropagation(patterns.ElementAt(j).Value);
+            }
+
+            return error;
+        }
+
+        public void Train(Dictionary<double[], double[]> patterns, int iterations)
+        {
+            Debug.WriteLine("[Train]");
+
+            const int numberOfErrorsToShow = 10;
+
+            for (int i = 0; i < iterations; i++)
+            {
+                double error = Train(patterns);
+
+                if (i % (int)(iterations/numberOfErrorsToShow) == 0)
+                    Debug.WriteLine(error);
+            }
+        }
+
+        public void Test(Dictionary<double[], double[]> patterns)
+        {
+            Debug.WriteLine("[Test]");
+
+            for (int j = 0; j < patterns.Count; j++)
+            {
+                var a = (patterns.ElementAt(j).Key);
+
+                Debug.WriteLine(this.ForwardPropagation(a)[0]);
+            }
+        }
+
         #region Help
 
         public Neuron[] GetNext(Neuron neuron)
@@ -196,54 +241,5 @@ namespace NeuronManagment
         }
 
         #endregion
-
-        public void Train(Dictionary<double[], double[]> patterns, int iterations)
-        {
-            for (int i = 0; i < iterations; i++)
-            {
-                double error = 0;
-
-                for (int j = 0; j < patterns.Count; j++)
-                {
-                    this.ForwardPropagation(patterns.ElementAt(j).Key);
-
-                    error += this.BackPropagation(patterns.ElementAt(j).Value);
-                }
-                if (i % 100 == 0)
-                    Debug.WriteLine(error);
-            }
-        }
-
-        public void Test(Dictionary<double[], double[]> patterns)
-        {
-            Debug.WriteLine("Test");
-
-            for (int j = 0; j < patterns.Count; j++)
-            {
-                var a = (patterns.ElementAt(j).Key);
-
-                Debug.WriteLine(this.ForwardPropagation(a));
-            }
-        }
-
-        public void demo()
-        {
-            Dictionary<double[], double[]> answers = new Dictionary<double[], double[]>
-            {
-                {new double[] {0, 0, 0}, new double[] {0}},
-                {new double[] {0, 0, 1}, new double[] {1}},
-                {new double[] {0, 1, 0}, new double[] {0}},
-                {new double[] {0, 1, 1}, new double[] {0}},
-                {new double[] {1, 0, 0}, new double[] {1}},
-                {new double[] {1, 0, 1}, new double[] {1}},
-                {new double[] {1, 1, 0}, new double[] {0}},
-                {new double[] {1, 1, 1}, new double[] {1}}
-            };
-
-            this.Train(answers, 10000);
-
-            this.Test(answers);
-        }
-
     }
 }
