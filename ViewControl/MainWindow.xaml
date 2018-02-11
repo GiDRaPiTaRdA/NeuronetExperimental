@@ -6,15 +6,28 @@
         xmlns:local="clr-namespace:ViewControl"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="350"
-        Width="525">
+        Height="479.025"
+        Width="777.86">
     <Grid>
         <Button x:Name="button"
-                Content="Button"
+                Content="NO"
                 HorizontalAlignment="Left"
                 Width="75"
-                Margin="0,0,0,298"
-                Click="button_Click" />
+                Margin="318,381,0,36"
+                Click="button_Click1" />
+        <Button x:Name="button_Copy"
+            Content="Ask"
+            HorizontalAlignment="Left"
+            Width="75"
+            Margin="420,381,0,36"
+            Click="button_Click" />
+
+        <CheckBox x:Name="checkBox" Content="водка" HorizontalAlignment="Left" Margin="63,78,0,0" VerticalAlignment="Top" IsChecked="{Binding IsChecked1}"/>
+        <CheckBox x:Name="checkBox_Copy" Content="дождь" HorizontalAlignment="Left" Margin="63,98,0,0" VerticalAlignment="Top"  IsChecked="{Binding IsChecked2}"/>
+        <CheckBox x:Name="checkBox_Copy1" Content="друг" HorizontalAlignment="Left" Margin="63,118,0,0" VerticalAlignment="Top"  IsChecked="{Binding IsChecked3}" />
+        <TextBlock x:Name="tB1" HorizontalAlignment="Left" Height="91" Margin="134,35,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="146"/>
+        <TextBlock x:Name="tB2" HorizontalAlignment="Left" Height="93" Margin="129,126,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="151"/>
+        <TextBlock x:Name="tA1" HorizontalAlignment="Left" Height="88" Margin="285,85,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="161"/>
 
     </Grid>
 </Window>

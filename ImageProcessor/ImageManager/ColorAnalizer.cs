@@ -19,6 +19,18 @@ namespace ImageProcessor
             return byteArray;
         }
 
+        public static byte[,] AnalizeByteLikeBool(Bitmap bitmap, byte filter = byte.MaxValue / 2)
+        {
+            byte[,] byteArray = new byte[bitmap.Width, bitmap.Height];
+
+            BinaryArrayTraversal.Traversal(byteArray, (@byte, x, y) =>
+            {
+                byteArray[x, y] = Convert.ToByte(GetBrightness(bitmap.GetPixel(x, y)) >= filter);
+            });
+
+            return byteArray;
+        }
+
         public static bool[,] AnalizeBoolean(Bitmap bitmap, byte filter = byte.MaxValue / 2)
         {
             bool[,] byteArray = new bool[bitmap.Width, bitmap.Height];

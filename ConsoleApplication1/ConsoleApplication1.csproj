@@ -53,6 +53,10 @@
       <Project>{ebe6f6c3-6945-41d8-aa37-fa635488e670}</Project>
       <Name>ImageProcessor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NeuronManagment\NeuronManagment.csproj">
+      <Project>{6e339c13-55d9-466d-ac1a-f40c3fb24204}</Project>
+      <Name>NeuronManagment</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StaticResourse\StaticResourse.csproj">
       <Project>{1c91244f-9c96-4827-a53c-4074c2efaa72}</Project>
       <Name>StaticResourse</Name>

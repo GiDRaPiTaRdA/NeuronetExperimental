@@ -36,14 +36,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="TraversalLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\TraversalLib\bin\Debug\TraversalLib.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -93,6 +90,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageProcessor\ImageProcessor.csproj">
+      <Project>{ebe6f6c3-6945-41d8-aa37-fa635488e670}</Project>
+      <Name>ImageProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NeuronManagment\NeuronManagment.csproj">
+      <Project>{6e339c13-55d9-466d-ac1a-f40c3fb24204}</Project>
+      <Name>NeuronManagment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StaticResourse\StaticResourse.csproj">
+      <Project>{1c91244f-9c96-4827-a53c-4074c2efaa72}</Project>
+      <Name>StaticResourse</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisualData\VisualData.csproj">
+      <Project>{be7f0002-3472-4df2-98ba-ba69b36b2ade}</Project>
+      <Name>VisualData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeightManagment\WeightManagment.csproj">
+      <Project>{20b84072-ffeb-4187-bcdf-e92584507d9e}</Project>
+      <Name>WeightManagment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeightRepositoryManager\WeightRepositoryManager.csproj">
+      <Project>{51d135a7-d7c7-40a7-a537-4cff07660a33}</Project>
+      <Name>WeightRepositoryManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

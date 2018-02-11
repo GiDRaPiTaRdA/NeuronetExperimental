@@ -9,14 +9,14 @@ namespace WeightManagment.WeightManage
 {
     public static class WeightManager
     {
-        public static Weight InnitWeightBy(Weight weight, int innitVar)
+        public static Weight InnitWeightBy(Weight weight, double innitVar)
         {
             for (int x = 0; x < weight.WeightArray.GetLength(0); x++)
                 for (int y = 0; y < weight.WeightArray.GetLength(1); y++)
                     weight.WeightArray[x, y] = innitVar;
             return weight;
         }
-        public static void InnitArrayBy(Weight weight, int innitVar)
+        public static void InnitArrayBy(Weight weight, double innitVar)
         {
             for (int x = 0; x < weight.WeightArray.GetLength(0); x++)
                 for (int y = 0; y < weight.WeightArray.GetLength(1); y++)
@@ -30,32 +30,38 @@ namespace WeightManagment.WeightManage
         }
         public static Weight AddWeights(Weight weight1, Weight weight2)
         {
+            Weight result = new Weight(new double[weight1.sizeX, weight1.sizeY]);
+
             if (!EqualsSize(weight1, weight2))
                 throw new IncompatibleWeightsSizesException();
 
-            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToInt32(b1 + b2));
-            return weight1;
+            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => result.WeightArray[x, y] = b1 + b2);
+            return result;
         }
         public static Weight SubstituteWeight(Weight weight1, Weight weight2)
         {
+            Weight result = new Weight(new double[weight1.sizeX, weight1.sizeY]);
+
             if (!EqualsSize(weight1, weight2))
                 throw new IncompatibleWeightsSizesException();
 
-            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToInt32(b1 - b2));
-            return weight1;
+            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => result.WeightArray[x, y] =b1 - b2);
+            return result;
         }
         public static Weight Multiply(Weight weight1, Weight weight2)
         {
+            Weight result = new Weight(new double[weight1.sizeX,weight1.sizeY]);
+
             if (!EqualsSize(weight1, weight2))
                 throw new IncompatibleWeightsSizesException();
 
-            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => weight1.WeightArray[x, y] = Convert.ToInt32(b1 * b2));
-            return weight1;
+            BinaryArrayTraversal.Traversal(weight1.WeightArray, weight2.WeightArray, (b1, b2, x, y) => result.WeightArray[x, y] =b1 * b2);
+            return result;
         }
 
-        public static int getSum(Weight weight)
+        public static double getSum(Weight weight)
         {
-            int sum = 0;
+            double sum = 0;
             for (int x = 0; x < weight.WeightArray.GetLength(0); x++)
             {
                 for (int y = 0; y < weight.WeightArray.GetLength(1); y++)
