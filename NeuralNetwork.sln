@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{5BFB1387-43B9-4607-A3C3-2C2795818170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "UI\ConsoleApplication1\ConsoleApplication1.csproj", "{08365B43-4C5C-4CB6-8F8D-CE46F7CA448F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewControl", "UI\ViewControl\ViewControl.csproj", "{8F87736C-FE5C-4F04-AD3B-4C1821186B7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NeuroNet", "NeuroNet", "{02940723-6BEC-4C50-BFAF-6E729D658147}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralCore", "NeuroNet\NeuralCore\NeuralCore.csproj", "{6E339C13-55D9-466D-AC1A-F40C3FB24204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralDemo", "NeuroNet\NeuralDemo\NeuralDemo.csproj", "{31724366-4025-47E6-8F8C-531AF70DF409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralMemory", "NeuroNet\NeuralMemory\NeuralMemory.csproj", "{927D012D-2DD4-453C-B633-0D815C82A7CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08365B43-4C5C-4CB6-8F8D-CE46F7CA448F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08365B43-4C5C-4CB6-8F8D-CE46F7CA448F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08365B43-4C5C-4CB6-8F8D-CE46F7CA448F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08365B43-4C5C-4CB6-8F8D-CE46F7CA448F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F87736C-FE5C-4F04-AD3B-4C1821186B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F87736C-FE5C-4F04-AD3B-4C1821186B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F87736C-FE5C-4F04-AD3B-4C1821186B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F87736C-FE5C-4F04-AD3B-4C1821186B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E339C13-55D9-466D-AC1A-F40C3FB24204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E339C13-55D9-466D-AC1A-F40C3FB24204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E339C13-55D9-466D-AC1A-F40C3FB24204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E339C13-55D9-466D-AC1A-F40C3FB24204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31724366-4025-47E6-8F8C-531AF70DF409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31724366-4025-47E6-8F8C-531AF70DF409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31724366-4025-47E6-8F8C-531AF70DF409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31724366-4025-47E6-8F8C-531AF70DF409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{927D012D-2DD4-453C-B633-0D815C82A7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{927D012D-2DD4-453C-B633-0D815C82A7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{927D012D-2DD4-453C-B633-0D815C82A7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{927D012D-2DD4-453C-B633-0D815C82A7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{08365B43-4C5C-4CB6-8F8D-CE46F7CA448F} = {5BFB1387-43B9-4607-A3C3-2C2795818170}
+		{8F87736C-FE5C-4F04-AD3B-4C1821186B7B} = {5BFB1387-43B9-4607-A3C3-2C2795818170}
+		{6E339C13-55D9-466D-AC1A-F40C3FB24204} = {02940723-6BEC-4C50-BFAF-6E729D658147}
+		{31724366-4025-47E6-8F8C-531AF70DF409} = {02940723-6BEC-4C50-BFAF-6E729D658147}
+		{927D012D-2DD4-453C-B633-0D815C82A7CB} = {02940723-6BEC-4C50-BFAF-6E729D658147}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65D45EDF-926D-4105-BD82-16752E4A48D6}
+	EndGlobalSection
+EndGlobal

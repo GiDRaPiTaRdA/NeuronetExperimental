@@ -1,0 +1,67 @@
+﻿// private static string RootPath => StaticResourse.StaticResourses.DefaultDirectoryForWeightRepository + "\\testing1.jpg";
+
+
+        //private static void ColorAnalizeRgb()
+        //{
+        //    using (Image img = ImageInnitDialog.InnitImage())
+        //    {
+        //        if (img != null)
+        //        {
+        //            var bitmap = ColorAnalizer.AnalizeBackWhite(img as Bitmap, 2);
+
+        //            VisualDataStorage.Save(bitmap, RootPath);
+
+        //            Process.Start(RootPath);
+        //        }
+        //    }
+        //}
+
+        //private static void ImageSimplify()
+        //{
+        //    using (Image img = ImageInnitDialog.InnitImage())
+        //    {
+        //        if (img != null)
+        //        {
+        //            var bitmap = PixelSimlifier.Simlify(img as Bitmap, 5);
+
+        //            VisualDataStorage.Save(bitmap, RootPath);
+
+        //            Process.Start(RootPath);
+        //        }
+        //    }
+
+        //}
+
+        //private static void ImageEdge()
+        //{
+        //    using (Image img = ImageInnitDialog.InnitImage())
+        //    {
+        //        if (img != null)
+        //        {
+        //            var bitmap = EdgeDetection.ScanDouble(img as Bitmap);
+        //            VisualDataStorage.Save(bitmap, RootPath);
+
+
+        //            Process.Start(RootPath);
+        //        }
+        //    }
+
+        //}
+
+        //private static void SaveWeightTest()
+        //{
+        //    byte[,] bytes;
+
+        //    using (Image img = ImageInnitDialog.InnitImage())
+        //    {
+        //        bytes = ColorAnalizer.AnalizeByte(img as Bitmap, 2);
+        //    }
+
+        //    string path = StorageManager.SaveWeight(new Weight(bytes),"testweight");
+
+        //    Console.WriteLine(StorageManager.LoadWeight(path).ToString());
+
+        //    Console.ReadLine();
+
+        //    Process.Start(path);
+        //}
