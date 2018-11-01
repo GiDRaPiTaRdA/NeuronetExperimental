@@ -16,7 +16,7 @@ namespace NeuronManagment
 
         List<Neuron>[] NeuroLayers { get; set; }
 
-        public double LearningRate { get; set; }
+        public double LearningRate { get; set; } = 1;
 
         #endregion
 
@@ -24,7 +24,6 @@ namespace NeuronManagment
         {
             this.NeuroLayers = new List<Neuron>[stucture.Length];
 
-            this.LearningRate = 1;
             this.Inntialize(stucture);
         }
 
@@ -69,7 +68,6 @@ namespace NeuronManagment
                 }
             }
         }
-
 
         public double[] ForwardPropagation(params double[] inputs)
         {
@@ -167,12 +165,11 @@ namespace NeuronManagment
             return error;
         }
 
-      
         public void Train(Dictionary<double[], double[]> patterns, int iterations)
         {
             for (int i = 0; i < iterations; i++)
             {
-                Train(patterns);
+                this.Train(patterns);
             }
         }
 
