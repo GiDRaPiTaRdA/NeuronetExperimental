@@ -4,16 +4,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NeuronManagment.NetDebug;
 
 namespace NeuronManagment.Demo
 {
     public static class NeuroDemo
     {
-        public static NeuroNet DemoStart(int iterations = 10000)
+        public static NeuroNet DemoStart(int iterations = 10000, Action<object> outAction = null)
         {
-            Debug.WriteLine("Demo starting...");
+            if (outAction == null)
+                outAction = Console.WriteLine;
 
-            NeuroNet neuroNet = new NeuroNet(3, 10, 5, 1);
+            outAction("Demo starting...");
+
+            NeuroNet neuroNet = new NeuroNet(3,2,1);
 
             Dictionary<double[], double[]> answers = new Dictionary<double[], double[]>
             {
@@ -27,9 +31,13 @@ namespace NeuronManagment.Demo
                 {new double[] {1, 1, 1}, new double[] {1}}
             };
 
-            neuroNet.Train(answers, iterations);
+            outAction("[Train]");
 
-            neuroNet.Test(answers);
+            neuroNet.TrainDebug(answers, iterations, outAction, 10);
+
+            outAction("[Test]");
+
+            neuroNet.Test(answers, outAction);
 
             return neuroNet;
         }

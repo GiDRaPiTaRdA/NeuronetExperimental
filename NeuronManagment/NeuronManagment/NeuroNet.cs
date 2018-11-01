@@ -81,7 +81,7 @@ namespace NeuronManagment
                 {
                     Neuron neuron = this.NeuroLayers[i][j];
 
-                    neuron.LastSum = this.CounSum(neuron);
+                    neuron.LastSum = this.CountSum(neuron);
                 }
             }
 
@@ -167,30 +167,12 @@ namespace NeuronManagment
             return error;
         }
 
+      
         public void Train(Dictionary<double[], double[]> patterns, int iterations)
         {
-            Debug.WriteLine("[Train]");
-
-            const int numberOfErrorsToShow = 10;
-
             for (int i = 0; i < iterations; i++)
             {
-                double error = Train(patterns);
-
-                if (i % (int)(iterations/numberOfErrorsToShow) == 0)
-                    Debug.WriteLine(error);
-            }
-        }
-
-        public void Test(Dictionary<double[], double[]> patterns)
-        {
-            Debug.WriteLine("[Test]");
-
-            for (int j = 0; j < patterns.Count; j++)
-            {
-                var a = (patterns.ElementAt(j).Key);
-
-                Debug.WriteLine(this.ForwardPropagation(a)[0]);
+                Train(patterns);
             }
         }
 
@@ -221,7 +203,7 @@ namespace NeuronManagment
             }
         }
 
-        private double CounSum(Neuron neuron)
+        private double CountSum(Neuron neuron)
         {
             double sum = neuron.Previous.Sum(s => s.Weight * s.Previous.LastSum);
 
@@ -241,5 +223,39 @@ namespace NeuronManagment
         }
 
         #endregion
+    }
+}
+
+namespace NeuronManagment.NetDebug
+{
+    static class NeuroNetDebug
+    {
+        public static void TrainDebug(this NeuroNet neuroNet, Dictionary<double[], double[]> patterns, int iterations, Action<object> outAction = null, int showProgress = 10)
+        {
+            Stopwatch timer = Stopwatch.StartNew();
+
+            const int numberOfErrorsToShow = 10;
+
+            for (int i = 0; i < iterations; i++)
+            {
+                double error = neuroNet.Train(patterns);
+
+                if (outAction != null && (i % (int)(iterations / numberOfErrorsToShow) == 0))
+                    outAction($"{error} i=[{i}]");
+            }
+
+            timer.Stop();
+            outAction?.Invoke($"time : {(double)timer.ElapsedMilliseconds/1000} count : {iterations}");
+        }
+
+        public static void Test(this NeuroNet neuroNet, Dictionary<double[], double[]> patterns, Action<object> outAction)
+        {
+            for (int j = 0; j < patterns.Count; j++)
+            {
+                var a = (patterns.ElementAt(j).Key);
+
+                outAction(neuroNet.ForwardPropagation(a)[0]);
+            }
+        }
     }
 }

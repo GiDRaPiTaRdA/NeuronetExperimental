@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ImageProcessor;
 using NeuronManagment;
+using NeuronManagment.Demo;
 using VisualData;
 using WeightManagment.WeightModel;
 using WeightRepositoryManager;
@@ -20,17 +21,11 @@ namespace ConsoleApplication1
         [STAThread]
         static void Main(string[] args)
         {
-            var net = NeuronManagment.Demo.NeuroDemo.DemoStart();
+            var net = NeuroDemo.DemoStart();
 
-            Debug.WriteLine(net.ForwardPropagation(1,0,1)[0] > 0.5 ? true:false);
+            Console.WriteLine(net.ForwardPropagation(1, 0, 1)[0] > 0.5 ? true : false);
 
-            //Neuro neuro = new Neuro();
-            //neuro.demo();
-
-            //ColorAnalizeRgb();
-            //ImageSimplify();
-            //SaveWeightTest();
-            //ImageEdge
+            Console.ReadKey();
         }
 
         //private static void ColorAnalizeRgb()
