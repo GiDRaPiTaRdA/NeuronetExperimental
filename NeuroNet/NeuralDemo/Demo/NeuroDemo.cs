@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using NeuralCore.NeuronManagment;
 using NeuralMemory;
 
@@ -7,7 +8,7 @@ namespace NeuralDemo.Demo
 {
     public class NeuroDemo
     {
-        private const string path = @"C:\Users\Maxim\Desktop\Новая папка\snapshot.nnms";
+        private const string path = @"Memory\snapshot.nnms";
 
         public readonly NeuroNet neuroNet;
         private readonly Action<object> outAction;
@@ -58,6 +59,9 @@ namespace NeuralDemo.Demo
                     case "load":
                         this.Load();
                         break;
+                    case "ask":
+                        this.Ask();
+                        break;
                     case "exit":
                         return this.neuroNet;
                     default:
@@ -80,12 +84,53 @@ namespace NeuralDemo.Demo
             this.neuroNet.Test(answers, this.outAction);
         }
 
+        public void Ask()
+        {
+            this.outAction("[Ask]");
+
+            int count = 3;
+            int i = 0;
+
+            double[] inputs = new double[count];
+
+            while (i<count)
+            {
+                Console.WriteLine($"Input {i} arg");
+                string input = Console.ReadLine();
+
+                bool parsed = int.TryParse(input, out int result);
+
+                if (parsed)
+                {
+                    inputs[i] = result;
+                    i++;
+                }
+                else
+                {
+                    Console.WriteLine($"Bad input");
+                }
+            }
+
+            double[] ansver = this.neuroNet.Ask(inputs);
+
+            Console.Write("ansver :");
+            
+            foreach (double a in ansver)
+            {
+                Console.Write($"\t{a}");
+            }
+
+            Console.WriteLine();
+        }
+
         public void Save()
         {
             try
             {
 
                 this.outAction("Saving...");
+
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
                 NeuralMemoryManger.SaveSnapshot(this.neuroNet.TakeMemorySnapshot(), path);
                 this.outAction("Saved");
             }

@@ -34,5 +34,10 @@ namespace NeuralCore.NeuronManagment
                 outAction(neuroNet.ForwardPropagation(a)[0]);
             }
         }
+
+        public static double[] Ask(this NeuroNet neuroNet,double [] inputs)
+        {
+           return neuroNet.ForwardPropagation(inputs);
+        }
     }
 }
