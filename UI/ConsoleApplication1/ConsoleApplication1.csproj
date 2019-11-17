@@ -61,10 +61,6 @@
       <Project>{31724366-4025-47e6-8f8c-531af70df409}</Project>
       <Name>NeuralDemo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\NeuroNet\NeuralMemory\NeuralMemory.csproj">
-      <Project>{927d012d-2dd4-453c-b633-0d815c82a7cb}</Project>
-      <Name>NeuralMemory</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="memory-chip.ico" />

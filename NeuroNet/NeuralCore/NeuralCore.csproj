@@ -35,21 +35,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NeuronManagment\NeuroNetDebug.cs" />
-    <Compile Include="NeuronManagment\NeuroNetFunctions.cs" />
-    <Compile Include="NeuronManagment\Entities\Bias.cs" />
-    <Compile Include="NeuronManagment\Entities\Neuron.cs" />
-    <Compile Include="NeuronManagment\NeuroNet.cs" />
-    <Compile Include="NeuronManagment\Entities\Receptor.cs" />
-    <Compile Include="NeuronManagment\Entities\Synapse.cs" />
-    <Compile Include="NeuronManagment\NeuroNetLinks.cs" />
+    <Compile Include="NeuronManagment\NeuroMemory.cs" />
+    <Compile Include="Entities\Memory.cs" />
+    <Compile Include="NeuronManagment\NeuroDebug.cs" />
+    <Compile Include="NeuronManagment\NeuroFuncs.cs" />
+    <Compile Include="Entities\Bias.cs" />
+    <Compile Include="Entities\Neuron.cs" />
+    <Compile Include="NeuroNet.cs" />
+    <Compile Include="Entities\Receptor.cs" />
+    <Compile Include="Entities\Synapse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WeightManagment\WeightManagment.csproj">
-      <Project>{20b84072-ffeb-4187-bcdf-e92584507d9e}</Project>
-      <Name>WeightManagment</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

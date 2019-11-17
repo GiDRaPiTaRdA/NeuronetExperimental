@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace NeuralCore.NeuronManagment
 {
-    public static class NeuroNetDebug
+    public static class NeuroDebug
     {
-        public static void TrainDebug(this NeuroNet neuroNet, Dictionary<double[], double[]> patterns, int iterations, Action<object> outAction = null, int showProgress = 10)
+        public static void Train(this NeuroNet neuroNet, Dictionary<double[], double[]> patterns, int iterations, Action<string> outAction = null)
         {
             Stopwatch timer = Stopwatch.StartNew();
 
@@ -22,14 +22,14 @@ namespace NeuralCore.NeuronManagment
             }
 
             timer.Stop();
-            outAction?.Invoke($"time : {(double)timer.ElapsedMilliseconds/1000} count : {iterations}");
+            outAction?.Invoke($"trained in {(double)timer.ElapsedMilliseconds / 1000} ms count : {iterations}");
         }
 
         public static void Test(this NeuroNet neuroNet, Dictionary<double[], double[]> patterns, Action<object> outAction)
         {
             for (int j = 0; j < patterns.Count; j++)
             {
-                var a = (patterns.ElementAt(j).Key);
+                double[] a = patterns.ElementAt(j).Key;
 
                 outAction(neuroNet.ForwardPropagation(a)[0]);
             }

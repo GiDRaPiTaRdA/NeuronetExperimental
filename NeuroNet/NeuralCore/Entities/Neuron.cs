@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NeuralCore.NeuronManagment.Entities
+namespace NeuralCore.Entities
 {
     [Serializable]
     public class Neuron

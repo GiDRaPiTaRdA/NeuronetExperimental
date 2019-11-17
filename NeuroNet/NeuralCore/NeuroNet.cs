@@ -1,19 +1,16 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NeuralCore.NeuronManagment.Entities;
+using NeuralCore.Entities;
+using NeuralCore.NeuronManagment;
 
-namespace NeuralCore.NeuronManagment
+namespace NeuralCore
 {
     public class NeuroNet
     {
         #region Properies
 
-        internal List<Neuron>[] NeuroLayers { get; set; }
+        protected internal Memory NeuroMemory { get; set; }
 
         public double LearningRate { get; set; } = 1;
 
@@ -21,23 +18,27 @@ namespace NeuralCore.NeuronManagment
 
         public NeuroNet(params int[] stucture)
         {
-            this.NeuroLayers = new List<Neuron>[stucture.Length];
+            this.NeuroMemory = new Memory(stucture.Length);
 
-            this.Inntialize(stucture);
+            this.Initialize(stucture);
         }
 
-        private void Inntialize(int[] structure)
+        /// <summary>
+        /// Initializes network with structure
+        /// </summary>
+        /// <param name="structure">structure of network</param>
+        private void Initialize(IReadOnlyList<int> structure)
         {
-            for (int i = 0; i < structure.Length; i++)
+            for (int i = 0; i < structure.Count; i++)
             {
-                this.NeuroLayers[i] = new List<Neuron>();
+                this.NeuroMemory.Layers[i] = new List<Neuron>();
 
                 // First receptors
                 if (i == 0)
                 {
                     for (int j = 0; j < structure[i]; j++)
                     {
-                        this.NeuroLayers[i].Add(new Receptor(0));
+                        this.NeuroMemory.Layers[i].Add(new Receptor(0));
                     }
                 }
 
@@ -46,13 +47,13 @@ namespace NeuralCore.NeuronManagment
                 {
                     for (int j = 0; j < structure[i]; j++)
                     {
-                        this.NeuroLayers[i].Add(new Neuron());
+                        this.NeuroMemory.Layers[i].Add(new Neuron());
 
                         // Link with previous
                         for (int k = 0; k < structure[i - 1]; k++)
                         {
-                            Neuron next = this.NeuroLayers[i][j];
-                            Neuron previous = this.NeuroLayers[i - 1][k];
+                            Neuron next = this.NeuroMemory.Layers[i][j];
+                            Neuron previous = this.NeuroMemory.Layers[i - 1][k];
 
                             Synapse synapse = new Synapse
                             {
@@ -68,68 +69,78 @@ namespace NeuralCore.NeuronManagment
             }
         }
 
+        /// <summary>
+        /// Take answer from network
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <returns></returns>
         public double[] ForwardPropagation(params double[] inputs)
         {
             this.SetInputs(inputs);
 
-            for (int i = 1; i < this.NeuroLayers.GetLength(0); i++)
+            for (int i = 1; i < this.NeuroMemory.Layers.GetLength(0); i++)
             {
-                for (int j = 0; j < this.NeuroLayers[i].Count; j++)
+                for (int j = 0; j < this.NeuroMemory.Layers[i].Count; j++)
                 {
-                    Neuron neuron = this.NeuroLayers[i][j];
+                    Neuron neuron = this.NeuroMemory.Layers[i][j];
 
                     neuron.LastSum = this.CountSum(neuron);
                 }
             }
 
-            double[] outputs = this.NeuroLayers[this.NeuroLayers.GetLength(0) - 1].Select((n) => n.LastSum).ToArray();
+            double[] outputs = this.NeuroMemory.Layers[this.NeuroMemory.Layers.GetLength(0) - 1].Select((n) => n.LastSum).ToArray();
 
             return outputs;
         }
 
+        /// <summary>
+        /// Process error
+        /// </summary>
+        /// <param name="targets"></param>
+        /// <returns>error</returns>
         public double BackPropagation(double[] targets)
         {
-            for(int l = this.NeuroLayers.Length-1;l>0; l--)
+            for(int l = this.NeuroMemory.Layers.Length-1;l>0; l--)
             {
                 // OUTPUT LAYER
-                if(l == this.NeuroLayers.Length - 1)
+                if(l == this.NeuroMemory.Layers.Length - 1)
                 {
                     // Layer A deltas
-                    for (int i = 0; i < this.NeuroLayers[l].Count; i++)
+                    for (int i = 0; i < this.NeuroMemory.Layers[l].Count; i++)
                     {
-                        Neuron neuron = this.NeuroLayers[l][i];
+                        Neuron neuron = this.NeuroMemory.Layers[l][i];
 
                         double error = targets[i] - neuron.LastSum;
-                        neuron.Delta = NeuroNetFunctions.SigmoidDerivativeFunc(neuron.LastSum) * error;
+                        neuron.Delta = NeuroFuncs.SigmoidDerivativeFunc(neuron.LastSum) * error;
                     }
                 }
                 // OTHER LAYERS
                 else
                 {
-                    for (int i = 0; i < this.NeuroLayers[l].Count; i++)
+                    for (int i = 0; i < this.NeuroMemory.Layers[l].Count; i++)
                     {
-                        Neuron neuronCurrent = this.NeuroLayers[l][i];
+                        Neuron neuronCurrent = this.NeuroMemory.Layers[l][i];
                        
                         double error = 0;
 
                         // Neurons from next layer
-                        for (int j = 0; j < this.NeuroLayers[l+1].Count; j++)
+                        for (int j = 0; j < this.NeuroMemory.Layers[l+1].Count; j++)
                         {
-                            Neuron neuronNext = this.NeuroLayers[l + 1][j];
+                            Neuron neuronNext = this.NeuroMemory.Layers[l + 1][j];
 
                             error += neuronNext.Delta * this.GetSynapse(neuronCurrent, neuronNext).Weight;
                         }
 
-                        neuronCurrent.Delta = NeuroNetFunctions.SigmoidDerivativeFunc(neuronCurrent.LastSum) * error;
+                        neuronCurrent.Delta = NeuroFuncs.SigmoidDerivativeFunc(neuronCurrent.LastSum) * error;
                     }
                 }
             }
 
             //FOR EACH LAYER UPDATE WEIGHTS
-            for (int i = this.NeuroLayers.GetLength(0) - 1; i > 0; i--)
+            for (int i = this.NeuroMemory.Layers.GetLength(0) - 1; i > 0; i--)
             {
-                List<Neuron> nextLayer = this.NeuroLayers[i];
-                List<Neuron> previousLayer = this.NeuroLayers[i - 1];
+                List<Neuron> nextLayer = this.NeuroMemory.Layers[i];
+                List<Neuron> previousLayer = this.NeuroMemory.Layers[i - 1];
 
                 foreach (Neuron previous in previousLayer)
                 {
@@ -145,11 +156,16 @@ namespace NeuralCore.NeuronManagment
             }
 
             // Calculate error
-            double err = targets.Select((t, i) => 0.5 * (Math.Pow(t, 2) - Math.Pow(this.NeuroLayers[this.NeuroLayers.Length-1][i].LastSum, 2))).Sum();
+            double err = targets.Select((t, i) => 0.5 * (Math.Pow(t, 2) - Math.Pow(this.NeuroMemory.Layers[this.NeuroMemory.Layers.Length-1][i].LastSum, 2))).Sum();
 
             return err;
         }
 
+        /// <summary>
+        /// Train network once
+        /// </summary>
+        /// <param name="patterns">inputs/anwers</param>
+        /// <returns>error</returns>
         public double Train(Dictionary<double[], double[]> patterns)
         {
             double error = 0;
@@ -164,6 +180,12 @@ namespace NeuralCore.NeuronManagment
             return error;
         }
 
+        /// <summary>
+        /// Train network once
+        /// </summary>
+        /// <param name="patterns">inputs/anwers</param>
+        /// <param name="iterations">nuber of times the network is trained</param>
+        /// <returns>error</returns>
         public void Train(Dictionary<double[], double[]> patterns, int iterations)
         {
             for (int i = 0; i < iterations; i++)
@@ -171,6 +193,8 @@ namespace NeuralCore.NeuronManagment
                 this.Train(patterns);
             }
         }
+
+
 
         #region Help
 
@@ -190,12 +214,12 @@ namespace NeuralCore.NeuronManagment
 
         private void SetInputs(params double[] inputs)
         {
-            if (inputs.Length != this.NeuroLayers[0].Count)
-                throw new Exception("Incompatible size of inputs");
+            if (inputs.Length != this.NeuroMemory.Layers[0].Count)
+                throw new ArgumentException("Incompatible size of inputs");
 
             for (int i = 0; i < inputs.Length; i++)
             {
-                this.NeuroLayers[0][i].LastSum = inputs[i];
+                this.NeuroMemory.Layers[0][i].LastSum = inputs[i];
             }
         }
 
@@ -203,7 +227,7 @@ namespace NeuralCore.NeuronManagment
         {
             double sum = neuron.Previous.Sum(s => s.Weight * s.Previous.LastSum);
 
-            double funSum = NeuroNetFunctions.SigmoidFunc(sum);
+            double funSum = NeuroFuncs.SigmoidFunc(sum);
 
             return funSum;
         }

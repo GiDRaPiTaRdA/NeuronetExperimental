@@ -42,17 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demo\Neuro.cs" />
-    <Compile Include="Demo\NeuroDemo.cs" />
+    <Compile Include="NeuroDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NeuralCore\NeuralCore.csproj">
       <Project>{6e339c13-55d9-466d-ac1a-f40c3fb24204}</Project>
       <Name>NeuralCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NeuralMemory\NeuralMemory.csproj">
-      <Project>{927D012D-2DD4-453C-B633-0D815C82A7CB}</Project>
-      <Name>NeuralMemory</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

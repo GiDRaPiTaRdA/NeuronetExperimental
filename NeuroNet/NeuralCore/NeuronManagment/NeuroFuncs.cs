@@ -2,7 +2,7 @@
 
 namespace NeuralCore.NeuronManagment
 {
-    public static class NeuroNetFunctions
+    internal static class NeuroFuncs
     {
         public static double SigmoidFunc(double x)
         {

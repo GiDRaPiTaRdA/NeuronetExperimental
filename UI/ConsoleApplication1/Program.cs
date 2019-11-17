@@ -6,8 +6,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using NeuralCore.NeuronManagment;
-using NeuralDemo.Demo;
-using NeuralMemory;
+using NeuralDemo;
 
 
 namespace ConsoleApplication1

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NeuralCore.NeuronManagment.Entities
+namespace NeuralCore.Entities
 {
     [Serializable]
     public class Receptor : Neuron
