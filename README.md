@@ -1,4 +1,4 @@
-# NeuroCORE
+# Neuro CORE
 
 see example of usage
 
