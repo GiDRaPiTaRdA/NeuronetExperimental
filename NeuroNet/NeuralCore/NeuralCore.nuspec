@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>GiDRaPiTaRdA.NeuralCore</id>
+    <version>1.0.0</version>
+    <title>Deep learning neural network core</title>
+    <authors>GiDRaPiTaRdA</authors>
+    <owners>GiDRaPiTaRdA</owners>
+    <projectUrl>https://github.com/GiDRaPiTaRdA/NeuronetExperimental</projectUrl>
+    <icon>icon.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This library is created to provide an easy control over deep learning neural network</description>
+    <releaseNotes>Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>GiDRaPiTaRdA gidrapitarda nn neuralnetwork deeplearning deep learning neural network perceptron teacher agent AI artificial inteligence</tags>
+    <license type="expression">MIT</license>
+  </metadata>
+  <files>
+    <file src="icon.png" target="" />
+    <file src="Readme.md" target="" />
+    <file src ="bin\Release\NeuralCore.dll" target="lib"/>
+  </files>
+
+</package>

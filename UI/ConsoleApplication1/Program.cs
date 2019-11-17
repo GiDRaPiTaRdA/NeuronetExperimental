@@ -13,7 +13,7 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        [STAThread]
+        //[STAThread]
         static void Main(string[] args)
         {
             NeuroDemo demo = new NeuroDemo(Console.WriteLine, 3,2,1);
