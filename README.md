@@ -1,4 +1,4 @@
-# NeuronetExperimental
+# NeuroCORE
 
 see example of usage
 
