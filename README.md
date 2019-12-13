@@ -3,7 +3,7 @@
 see example of usage
 
 //DEMO
- 
+ {
   class Program
     {
         //[STAThread]
@@ -190,4 +190,4 @@ see example of usage
             }
         }
     }
-	
+	}
