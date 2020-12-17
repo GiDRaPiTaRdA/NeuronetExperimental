@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.OleDb;
 using System.IO;
 using System.Linq;
 using NeuralCore;
 using NeuralCore.NeuronManagment;
+using OfficeOpenXml;
 
 namespace NeuralDemo
 {
@@ -28,9 +31,42 @@ namespace NeuralDemo
 
         public NeuroDemo(Action<object> outAction = null, params int[] dimentions)
         {
+            string s = @"data\Термистор 100кОм.xlsx";
+
+            //string[,] content = this.ReadData();
+
+            DataTable a = this.ReadExcel(s);
+
             this.NeuroNet = new NeuroNet(dimentions);
 
             this.outAction = outAction ?? Console.WriteLine;
+        }
+
+        public DataTable ReadExcel(string fileName)
+        {
+            //string connectionString = Path.GetExtension(fileName).CompareTo(".xls") == 0 ? 
+            //    $@"provider=Microsoft.Jet.OLEDB.4.0;Data Source={fileName};Extended Properties='Excel 8.0;HRD=Yes;IMEX=1';" : 
+            //    $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={fileName};Extended Properties='Excel 12.0;HDR=NO';";
+
+            //OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM [Sheet1$]", connectionString);
+
+            //DataSet ds = new DataSet();
+
+            //adapter.Fill(ds, "anyNameHere");
+
+            //DataTable data = ds.Tables["anyNameHere"];
+
+            //return data;
+
+            using (ExcelPackage package = new ExcelPackage(new FileInfo("MyWorkbook.xlsx")))
+            {
+                ExcelWorksheet firstSheet = package.Workbook.Worksheets["First Sheet"];
+
+                firstSheet.Cells.End.Column;
+                firstSheet.Cells.End.Row;
+
+                firstSheet.
+            }
         }
 
         public NeuroNet DemoStart()
